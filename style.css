@@ -1,0 +1,126 @@
+body {
+    background-color: #fff0f5;
+    color: #5c3047;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+.container {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+button {
+    background-color: #e88caf;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 20px;
+    cursor: pointer;
+    max-width: 100%;
+}
+
+button:hover {
+    background-color: #d66b94;
+}
+
+.hidden {
+    display: none;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 25px 0;
+}
+
+#countdown div {
+    background-color: white;
+    border-radius: 12px;
+    padding: 15px 10px;
+    min-width: 65px;
+    box-shadow: 0 3px 8px #00000010;
+}
+
+#countdown span {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#countdown p {
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+.message {
+    margin-top: 25px;
+}
+
+#confettiContainer {
+    position: relative;
+    height: 0;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.confetti {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    animation: burst 1.5s ease-out forwards;
+}
+
+@keyframes burst {
+    from {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+
+    to {
+        transform:
+            translate(var(--x), var(--y))
+            rotate(540deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 400px) {
+    #countdown {
+        gap: 6px;
+    }
+
+    #countdown div {
+        min-width: 52px;
+        padding: 12px 6px;
+    }
+
+    #countdown span {
+        font-size: 24px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .confetti {
+        animation: none;
+        display: none;
+    }
+}
+
+ 
